@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--suppress ALL -->
+
 <androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +9,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottom"
+            android:background="@color/white"
+            android:layout_marginTop="674dp"
+            app:menu="@menu/bottom_nav"
+
+
+            />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation"
@@ -19,30 +32,20 @@
 
         />
 
-   <!--- <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:menu="@menu/bottom_nav"
-        android:layout_gravity="start"
 
-
-        />
--->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-        <LinearLayout
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
             android:id="@+id/toolBar"
-            android:orientation="horizontal"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
             android:background="@color/primary"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -54,44 +57,48 @@
                 android:src="@drawable/ic_baseline_menu_24"
                 android:tint="@color/white"/>
 
+
+
             <TextView
+                android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/title"
-                android:layout_marginStart="15dp"
                 android:text="حولينا"
                 android:textColor="@color/white"
                 android:textSize="33dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
-        </LinearLayout>
+            <SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_below="@+id/title"
+                android:text="search"
 
+                />
 
+        </RelativeLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-
-
-
-
-
-
-
-
     <androidx.recyclerview.widget.RecyclerView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+
 
         android:id="@+id/place_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
-        android:scrollbars="vertical"/>
+        android:layout_marginTop="100dp"
+        android:scrollbars="vertical">
 
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
+
+
+
 
 
 
