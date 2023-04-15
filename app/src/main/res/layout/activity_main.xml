@@ -30,57 +30,65 @@
         android:layout_gravity="start"
 
 
-        />
+        >
 
+    </com.google.android.material.navigation.NavigationView>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/top_background">
 
-
-
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/toolBar"
-            android:paddingStart="0dp"
-            android:paddingEnd="0dp"
-            android:background="@color/primary"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/menu"
-                android:layout_width="38dp"
-                android:layout_height="30dp"
-                android:contentDescription="app-name"
-                android:src="@drawable/ic_baseline_menu_24"
-                android:tint="@color/white"/>
+            android:layout_height="match_parent">
 
 
-
-            <TextView
-                android:id="@+id/title"
+            <RelativeLayout
+                android:id="@+id/toolBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="حولينا"
-                android:textColor="@color/white"
-                android:textSize="33dp"
-                android:textStyle="bold" />
+                android:background="@color/primary"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <SearchView
-                android:id="@+id/search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_below="@+id/title"
-                android:text="search"
-
-                />
-
-        </RelativeLayout>
+                <ImageView
+                    android:id="@+id/menu"
+                    android:layout_width="38dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="app-name"
+                    android:src="@drawable/ic_baseline_menu_24"
+                    android:tint="@color/white" />
 
 
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="حولينا"
+                    android:textSize="33dp"
+                    android:textStyle="bold"
+
+                    />
+
+                <SearchView
+                    android:id="@+id/search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+
+                    android:background="@color/white"
+                    android:text="search" />
+
+            </RelativeLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
